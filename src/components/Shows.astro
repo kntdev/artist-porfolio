@@ -1,0 +1,69 @@
+---
+import data from "../json/fechas.json" assert {type: 'json'}
+---
+
+<div class="container-shows">
+    {
+        data.map((show)=>(
+        <div class="show-item">
+                <span class="nombre">{show.nombre}</span>	
+                <span class="locacion">{show.locacion}</span>	
+                <a class="btn-reserva" target="_blank" href={show.link}>RESERVAR</a>
+        </div>
+        ))
+    }
+    <hr>
+    <div class="show-social">
+        <h3>Seguinos para enterarte de las proximas fechas</h3>
+        <a class="btn-show-social" target="_blank" href="https://www.instagram.com/vago_beat/"><i class="fa-brands fa-instagram"></i> INSTAGRAM</a>
+    </div>
+</div>
+
+<style>
+    *{
+	    font-family: 'Outfit', sans-serif;
+    }
+    .container-shows{
+        /* border: 1px red solid; */
+        width: 80%;
+        margin: 20px auto;
+        border-radius: 15px;
+        box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.3);
+		-webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.3);
+        padding: 10px;
+    }
+    .show-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }
+    .nombre{
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .btn-reserva{
+        padding: 6px;
+        background-color: rgb(137, 43, 226);
+        color: #fff;
+    }
+    .show-social{
+        width: 30%;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 15px;
+    }
+    .show-social h3{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+    }
+    .btn-show-social{
+        font-size: 1.1em;
+        padding: 8px;
+        background-color: rgb(137, 43, 226);
+        color: #fff;
+        border-radius: 10px;
+    }
+</style>

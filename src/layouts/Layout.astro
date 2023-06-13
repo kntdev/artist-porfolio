@@ -1,0 +1,130 @@
+---
+import Social from '../components/Social.astro';
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<script src="https://kit.fontawesome.com/09d68e256a.js" crossorigin="anonymous"></script>
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a class="item" href="#">HOME</a>
+					</li>
+					<li>
+						<a class="item" href="#">STORE</a>
+					</li>
+					<li>
+						<a class="item" href="#">GET ALBUM</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="logo">
+				<img src="./vagobeat2.png" alt="">
+			</div>
+			<Social/>
+		</header>
+		<slot />
+		<footer>
+			<span class="footer-text">© 2023 - VAGOBEAT, All Rights Reserved</span>
+			<Social/>
+			<div class="footer-items footer-text">
+				<a href="#">Privacy Policy</a>
+				<span>-</span>
+				<a href="#">Cookie Policy</a>
+			</div>
+		</footer>
+	</body>
+</html>
+<style is:global>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;700&display=swap');
+
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+
+	header{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		/* border: 1px solid red; */
+		width: 80%;
+		margin: auto;
+		border-radius: 0 0 15px 15px;
+		box-shadow: 0px 0px 30px 20px rgba(0,0,0,0.25);
+		-webkit-box-shadow: 0px 0px 30px 20px rgba(0,0,0,0.25);
+		-moz-box-shadow: 0px 0px 30px 20px rgba(0,0,0,0.25);
+		font-family: 'Bebas Neue', sans-serif;
+		margin-bottom: 40px;
+	}
+	ul{
+		display: flex;
+		gap: 20px;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		font-weight: bold;
+		color: #000;
+	}
+	.logo img{
+		mix-blend-mode: color-burn;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.logo{
+		width: 220px;
+		margin: 10px;
+	}
+	.item{
+		font-size: 1.5em;
+	}
+	footer{
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 220px;
+		background-color: #131313;
+		margin-top: 60px;
+		font-family: 'Bebas Neue', sans-serif;
+	}
+	footer,footer a{
+		color: #F6F6F6;
+		font-weight: normal;
+	}
+	.footer-text{
+		font-size: 1.3em;
+	}
+	.footer-items{
+		display: flex;
+		gap: 10px;
+	}
+</style>
