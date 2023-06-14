@@ -38,6 +38,7 @@ import data from "../json/fechas.json" assert {type: 'json'}
         justify-content: space-between;
         align-items: center;
         padding: 15px;
+        flex-wrap: wrap;
     }
     .nombre{
         font-weight: bold;
@@ -49,15 +50,19 @@ import data from "../json/fechas.json" assert {type: 'json'}
         color: #fff;
     }
     .show-social{
-        width: 30%;
         text-align: center;
-        margin: auto;
+        margin: 10px;
         padding-bottom: 15px;
     }
     .show-social h3{
+        width: 40%;
+        min-width: 150px;
+        max-width: 400px;
         margin-top: 10px;
         margin-bottom: 20px;
-        font-size: 1.5em;
+        font-size: 1.4em;
+        margin: auto;
+        text-align: center;
     }
     .btn-show-social{
         font-size: 1.1em;
@@ -65,5 +70,16 @@ import data from "../json/fechas.json" assert {type: 'json'}
         background-color: rgb(137, 43, 226);
         color: #fff;
         border-radius: 10px;
+        display: block;
+        min-width: 140px;
+        max-width: 150px;
+        margin: auto;
     }
+
+    @media only screen and (max-width: 475px) {
+        .show-item{
+        flex-direction: column;
+    }
+}
+
 </style>

@@ -4,18 +4,13 @@ import Shows from '../components/Shows.astro';
 import Videos from '../components/Videos.astro';
 import Canciones from '../components/Canciones.astro';
 import Card from '../components/Card.astro';
+import Banner from '../components/Banner.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<section class="news">
-			<div class="banner">
-				<div class="banner-text">
-					<h2>VAGOBEAT OUT NOW</h2>
-					<h3>NEXT WEEKEND 19TH JUNY</h3>
-					<button>SEE MORE</button>
-				</div>
-			</div>
+			<Banner/>
 		</section>
 		<section class="shows">
 			<h2 class="titulo-seccion">SHOWS</h2>
@@ -49,36 +44,6 @@ import Card from '../components/Card.astro';
 	}
 	.news{
 		width: 100%;
-	}
-	.banner{
-		height: 250px;
-		background: url(./vagobeatbanner.jpg);
-		position: relative;
-		border: blueviolet 3px solid;
-	}
-	.banner-text{
-		text-align: end;
-		text-shadow: 0px 0px 30px rgba(255,255,255,.6);
-		color: #fff;
-		font-size: 1.8em;
-		background-color: rgba(94, 31, 152, 0.85);
-		display: inline-block;
-		position: absolute;
-		right: 80px;
-		top: 60px;
-		padding: 7px;
-		font-family: 'Outfit', sans-serif;
-		text-align: center;
-	}
-	.banner-text button{
-		border: none;
-		padding: 6px;
-		background-color: #fff;
-		font-family: 'Outfit', sans-serif;
-		font-weight: bold;
-		font-size: .7em;
-		color: rgb(137, 43, 226);
-		cursor: pointer;
 	}
 	.titulo-seccion{
 		font-family: 'Bebas Neue', sans-serif;
